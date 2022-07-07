@@ -4,6 +4,7 @@ classifier = cv2.CascadeClassifier('haarcascade_frontalface.xml')
 gray_img = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
 bboxes = classifier.detectMultiScale(gray_img, scaleFactor = 1.05, minNeighbors=10)
 print(bboxes)
+print("face detected")
 
 for x,y,w,h in bboxes:
     image = cv2.rectangle(image,(x,y),(x+w,y+h),(0,255,0),3)
